@@ -23,7 +23,7 @@ ruleTester.run("no-overwritten-increment", rule, {
     valid: [
         "x = y",
         "x = y++",
-        "x = x++ + 1;"
+        "x = ++x"
     ],
 
     invalid: [
@@ -31,15 +31,15 @@ ruleTester.run("no-overwritten-increment", rule, {
             code: "x = x++;",
             errors: [{
                 message: "Should not combine an assignment with the increment of the left hand side. The original value would immediately overwrite the incremented value.",
-                type: "AssignmentExpression"
+                type: "UpdateExpression"
             }]
         },
 
         {
-            code: "x = (--x);",
+            code: "x[0] = (x[0]--) + 1;",
             errors: [{
                 message: "Should not combine an assignment with the decrement of the left hand side. The original value would immediately overwrite the decremented value.",
-                type: "AssignmentExpression"
+                type: "UpdateExpression"
             }]
         }
     ]
