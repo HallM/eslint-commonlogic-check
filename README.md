@@ -4,16 +4,18 @@ Checks for common sources of bugs and logic errors
 
 ## Installation
 
-You'll first need to install [ESLint](http://eslint.org):
+You'll first need to install [ESLint](http://eslint.org) with NPM, Yarn, or your favorite package manager:
 
 ```
 $ npm i eslint --save-dev
+$ yarn add --dev eslint
 ```
 
 Next, install `eslint-plugin-checkbugs`:
 
 ```
 $ npm install eslint-plugin-checkbugs --save-dev
+$ yarn add --dev eslint-plugin-checkbugs
 ```
 
 **Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-checkbugs` globally.
@@ -45,7 +47,7 @@ Then you may extend from presets and/or configure the individual rules you want 
 ```json
 {
     "rules": {
-        "common-bug-checks/rule-name": 2
+        "checkbugs/rule-name": 2
     }
 }
 ```
