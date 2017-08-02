@@ -21,7 +21,9 @@ var ruleTester = new RuleTester();
 ruleTester.run("no-same-switchcase-blocks", rule, {
 
     valid: [
-        "switch (x) {\ncase 1: x++;\nbreak;\ncase 2: y++;\nbreak;\n}"
+        "switch (x) {\ncase 1: x++;\nbreak;\ncase 2: y++;\nbreak;\n}",
+        "switch (x) {\ncase 1:\ncase 2: y++;\nbreak;\ncase 3:\ncase 4: z++;\nbreak;\n}",
+
     ],
 
     invalid: [
