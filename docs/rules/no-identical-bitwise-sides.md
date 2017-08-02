@@ -1,36 +1,19 @@
-# Prevents most bitwise operations with left and right being identical. (no-identical-bitwise-sides)
+# no-identical-bitwise-sides
 
-Please describe the origin of the rule here.
-
+Catches if both sides of a bitwise operator are the same expression. These are generally a typo, a logic error, or the bitwise expression can be reduced.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
-
-// fill me in
-
+x & x
+(x + 3 - y) ^ ((x + 3) - y)
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
-
-// fill me in
-
+x & y
+(x + 3 * y) ^ ((x + 3) * y)
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

@@ -1,36 +1,21 @@
-# Checks for assignments where x = x, which may be a bug (no-same-assignment)
+# no-same-assignment
 
-Please describe the origin of the rule here.
-
+Catches if attempting to assign a value to itself, such as `x = x`. This may be a typo or an error as the operation has no effect.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
+x = x
 
-// fill me in
-
+y[3 * x] = y[3 * x]
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
+x = z
 
-// fill me in
-
+y[3 * x] = y[2 * x]
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

@@ -1,36 +1,21 @@
-# Left and Right sides of a Logical Expression should not be identical (no-identical-logical-sides)
+# no-identical-logical-sides
 
-Please describe the origin of the rule here.
-
+Catches if both sides of a `&&` or `||` are the same expression. This is probably an error or a typo.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
+x && x
 
-// fill me in
-
+(x == 4 * 3) || (x == (4 * 3))
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
+x && x
 
-// fill me in
-
+(x == 4 + 3) || (x == (4 * 3))
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

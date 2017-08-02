@@ -1,36 +1,23 @@
-# Using x % 2 == 1 for an even/odd check will not work if x is negative. (no-bad-odd-checks)
+# no-bad-odd-checks
 
-Please describe the origin of the rule here.
-
+Catches if using `x % 2 === 1` to check for odd. This type of check fails when x is negative as `-1 % 2 === -1`. Recommends to use `x % 2 !== 0` for checking if a value is odd.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
-
-// fill me in
-
+x % 2 == 1
+x % 2 === 1
+x % 2 == true
+x % 2 == !false
+x % 2 == !0
+x % 2 == ~0
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
-
-// fill me in
-
+x % 2 == 0
+x % 2 !== 0
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

@@ -1,36 +1,20 @@
-# Catches typos like =+ and =- that should be += and -= (no-backwards-assign-ops)
+# no-backwards-assign-ops
 
-Please describe the origin of the rule here.
-
+Catches potential typos `x =+ y` and `x =- y`. These commonly are typos. If the intended behavior is `x = -y`, then place a space between the `=` and `+`/`-` to clarify the intended behavior.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
+x =+ y
 
-// fill me in
-
+x=-y
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
-
-// fill me in
-
+x += y
+x= -y
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

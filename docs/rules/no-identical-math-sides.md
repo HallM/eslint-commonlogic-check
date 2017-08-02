@@ -1,36 +1,24 @@
-# Left and Right sides of most math operators should not be identical (no-identical-math-sides)
+# no-identical-math-sides
 
-Please describe the origin of the rule here.
-
+Catches if both sides of a math operator (`-`, `%`, `/`, but not `+` nor `*`) are the same expression. This may be an error as the expression could be simplified.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
+x - x
 
-// fill me in
-
+(x + z - 3) / (x + z - 3)
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
+x + x
+x * x
 
-// fill me in
+x - y
 
+(x + z) / (x - 3)
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

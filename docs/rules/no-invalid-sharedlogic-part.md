@@ -1,36 +1,34 @@
-# Prevents a situation of A || (A &amp;&amp; B) as the 2nd half is always false (no-invalid-sharedlogic-part)
+# no-invalid-sharedlogic-part
 
-Please describe the origin of the rule here.
+Catches logical expressions with patterns of shared expressions, such as `A \|\| (A && B)`, `(A && B) \|\| A`, `A \|\| (B && A)`, `(B && A) \|\| A`, which may be a logic error or typo. All four patterns can be simplified and may not operate how intended as some parts may never execute.
 
+* `(A && B) || A` runs the same as just `(A && B)`.
+* `(B && A) || A` runs the same as just `(B && A)`.
+* `A || (A && B)` runs the same as just `A`. `B` will never be evaluated in this case.
+* `A || (B && A)` runs the same as just `A`. `B` will may evaluate if A is falsy, but the result of the expression is still always `A`.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
+(a && b) || a
 
-// fill me in
+(b && a) || a
 
+a || (a && b)
+
+a || (b && a)
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
+(a || b) && a
 
-// fill me in
+(!a && b) || a
 
+!a || (a && b)
+
+a || (b && c)
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

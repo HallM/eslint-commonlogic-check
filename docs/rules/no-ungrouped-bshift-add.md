@@ -1,36 +1,19 @@
-# Prevents misunderstandings of operator precedence with x &lt;&lt; y + z (no-ungrouped-bshift-add)
+# no-ungrouped-bshift-add
 
-Please describe the origin of the rule here.
-
+Catches the pattern of adding to a bitshift, such as `x << y + 3`. This is a common source of bugs as the statement is executed as `x << (y + 3)`. Suggests using parenthesis to clarify the intended behavior.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
-
-// fill me in
-
+x << y + 3
+x >> 5 - 3
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
-
-// fill me in
-
+(x << y) + 3
+x >> (5 - 3)
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

@@ -1,36 +1,38 @@
-# Checks if two switch cases have the same code (no-same-switchcase-blocks)
+# no-same-switchcase-blocks
 
-Please describe the origin of the rule here.
-
+Catches if two switch cases have the exact same set of statements, ignoring fall throughs. The two cases may be able to be joined. This may not necessarily be an error, just a suggestion.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
-
-// fill me in
-
+switch (x) {
+  case 1:
+    x = y * 3 + 4;
+    break;
+  case 2:
+    x = (y * 3) + 4;
+    break;
+}
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
+switch (x) {
+  case 1:
+  case 2:
+    x = (y * 3) + 4;
+    break;
+}
 
-// fill me in
-
+switch (x) {
+  case 1:
+    x = y + 3 * 4;
+    break;
+  case 2:
+    x = (y + 3) * 4;
+    break;
+}
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

@@ -1,36 +1,23 @@
-# Cannot have a semicolon, or an empty expression, for a loop or choice statement block (no-emptyexpr-choice-loop)
+# no-emptyexpr-choice-loop
 
-Please describe the origin of the rule here.
-
+Catches semicolons after if/elseif/else and loops like while and for. `if (x); {}` will always run the block and probably is not the intended behavior. If this was, just use an empty block, `{}`, with any comment inside to pass the empty blocks check.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
+if (x);
 
-// fill me in
-
+while (x); {
+}
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
+if (x) {}
 
-// fill me in
-
+while (x) {
+}
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

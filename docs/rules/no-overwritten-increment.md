@@ -1,36 +1,23 @@
-# Do not allow setting a variable to the increment or decrement of itself (no-overwritten-increment)
+# no-overwritten-increment
 
-Please describe the origin of the rule here.
-
+Catches when the result of a post-increment or post-decrement would be overwritten with an assignment. This checks if an assignment of something contains the post-increment or post-decrement of itself. The most basic example is `x = x++` in which `x` will retain the value and not increment.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
+x = x++;
 
-// fill me in
-
+y = y-- + 4;
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
+x = ++x;
 
-// fill me in
+x = y++;
 
+y = y - 1 + 4;
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

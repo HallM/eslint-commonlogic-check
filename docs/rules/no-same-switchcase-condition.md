@@ -1,36 +1,31 @@
-# Prevents two cases from having the same condition (no-same-switchcase-condition)
+# no-same-switchcase-condition
 
-Please describe the origin of the rule here.
-
+Catches when more than one switch case has the exact same condition. The second case will never execute as teh condition is caught by the first case. This is more than likely an error.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
-
-// fill me in
-
+switch (x) {
+  case 1:
+    break;
+  case 2:
+    break;
+  case 1:
+    break;
+}
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
-
-// fill me in
-
+switch (x) {
+  case 1:
+    break;
+  case 2:
+    break;
+  case 3:
+    break;
+}
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

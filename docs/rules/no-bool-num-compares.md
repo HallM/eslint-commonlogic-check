@@ -1,7 +1,6 @@
-# Prevents comparing numbers and booleans and also using numerical comparisons on booleans (no-bool-num-compares)
+# no-bool-num-compares
 
-Please describe the origin of the rule here.
-
+Catches if attempting to comparisons (`>`, `>=`, `<`, and `<=`) between a boolean to a number. Also catches attempting to test equality between a boolean literal and a literal that is not a boolean.
 
 ## Rule Details
 
@@ -10,27 +9,15 @@ This rule aims to...
 Examples of **incorrect** code for this rule:
 
 ```js
-
-// fill me in
-
+5 == true
+x > false
+false <= true
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
-
-// fill me in
-
+x < y
+x != true
+true == false
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

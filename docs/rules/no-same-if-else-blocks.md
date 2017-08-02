@@ -1,36 +1,25 @@
-# Catches an if-then block matches an else or else-if-then block (no-same-if-else-blocks)
+# no-same-if-else-blocks
 
-Please describe the origin of the rule here.
-
+Catches when If, ElseIf, or Else statements execute the same block of statements. This may be an error or could be simplified.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
-
-// fill me in
-
+if (x) {
+  z = x * 3;
+} else {
+  z = x * 3;
+}
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
-
-// fill me in
-
+if (x) {
+  z = x * 3;
+} else {
+  z = y * 3;
+}
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

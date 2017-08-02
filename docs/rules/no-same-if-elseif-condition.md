@@ -1,36 +1,31 @@
-# If and Else if conditions should not be the exact same (no-same-if-elseif-condition)
+# no-same-if-elseif-condition
 
-Please describe the origin of the rule here.
-
+Catches when If or ElseIf conditions are the exact same expression. The second test will never execute as the condition is caught by the first one. This is more than likely an error.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
+if (x) {
+} else if (y) {
+} else if (x) {
+}
 
-// fill me in
-
+if (x * 3 + 4) {
+} else if ((x * 3) + 4) {
+}
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
+if (x) {
+} else if (y) {
+} else if (z) {
+}
 
-// fill me in
-
+if (x + 3 * 4) {
+} else if ((x + 3) * 4) {
+}
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
