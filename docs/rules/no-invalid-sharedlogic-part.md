@@ -1,6 +1,6 @@
 # no-invalid-sharedlogic-part
 
-Catches logical expressions with patterns of shared expressions, such as `A \|\| (A && B)`, `(A && B) \|\| A`, `A \|\| (B && A)`, `(B && A) \|\| A`, which may be a logic error or typo. All four patterns can be simplified and may not operate how intended as some parts may never execute.
+Catches logical expressions with patterns of shared expressions, such as `A || (A && B)`, `(A && B) || A`, `A || (B && A)`, `(B && A) || A`, which may be a logic error or typo. All four patterns can be simplified and may not operate how intended as some parts may never execute.
 
 * `(A && B) || A` runs the same as just `(A && B)`.
 * `(B && A) || A` runs the same as just `(B && A)`.
