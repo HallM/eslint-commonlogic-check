@@ -74,7 +74,6 @@ Then you may extend from presets and/or configure the individual rules you want 
 | [no-same-assignment](https://github.com/HallM/eslint-plugin-checkbugs/blob/master/docs/rules/no-same-assignment.md) | 0.0.1 | Error |
 | [no-same-if-else-blocks](https://github.com/HallM/eslint-plugin-checkbugs/blob/master/docs/rules/no-same-if-else-blocks.md) | 0.0.1 | Warn |
 | [no-same-if-elseif-condition](https://github.com/HallM/eslint-plugin-checkbugs/blob/master/docs/rules/no-same-if-elseif-condition.md) | 0.0.1 | Error |
-| [no-same-switchcase-blocks](https://github.com/HallM/eslint-plugin-checkbugs/blob/master/docs/rules/no-same-switchcase-blocks.md) | 0.0.1 | Warn |
 | [no-same-switchcase-condition](https://github.com/HallM/eslint-plugin-checkbugs/blob/master/docs/rules/no-same-switchcase-condition.md) | 0.0.1 | Error |
 | [no-similar-compare-expression](https://github.com/HallM/eslint-plugin-checkbugs/blob/master/docs/rules/no-similar-compare-expression.md) | 0.0.1 | Error |
 | [no-triple-negation](https://github.com/HallM/eslint-plugin-checkbugs/blob/master/docs/rules/no-triple-negation.md) | 0.0.1 | Error |
