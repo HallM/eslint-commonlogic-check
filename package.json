@@ -10,7 +10,8 @@
   "author": "Matt Hall",
   "main": "lib/index.js",
   "scripts": {
-    "test": "istanbul cover node_modules/mocha/bin/_mocha -- --recursive tests/**/*.js"
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- --recursive tests/**/*.js",
+    "test-one": "run() { mocha \"tests/lib/rules/$1.js\"; }; run"
   },
   "dependencies": {
     "requireindex": "~1.1.0"
